@@ -11,7 +11,7 @@ if (process.env.VUE_APP_API_URL) {
   url = process.env.VUE_APP_API_URL
 }
 
-const io = SocketIO(apiURL, {})
+const io = SocketIO(url, {})
 
 // add a reference to the SocketIO instance to the store
 store.$socket = io

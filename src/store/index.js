@@ -15,10 +15,11 @@ const store = new Vuex.Store({
     actions: {
         sendMessage(context, payload) {
             context.commit('SEND_MESSAGE', payload)
-        },
-        this.$socket.emit('message', {
-            screen: payload.screen
-        })
+        
+            this.$socket.emit('message', {
+                screen: payload.screen
+            })
+        }
     }
 })
 

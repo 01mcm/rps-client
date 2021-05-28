@@ -24,10 +24,10 @@ export default {
       }
   },
   computed: {
-      messages(): {
+      messages() {
         return this.$store.state.messages
       }
-    }
+  },
   components: {
   },
   sockets: {
