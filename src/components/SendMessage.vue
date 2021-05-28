@@ -9,7 +9,7 @@ export default {
     props: ['screen']
 ,    methods: {
         sendMessage() {
-            this.$socket.emit('message', {
+            this.$store.dispatch('sendMessage', {
                 screen: this.screen
             })
         }

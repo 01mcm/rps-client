@@ -11,6 +11,6 @@ import SendMessage from '../components/SendMessage'
 export default {
     components: {
         SendMessage
-    }
+    },
 }
 </script>

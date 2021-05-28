@@ -19,22 +19,30 @@ export default {
   name: 'App',
   data () {
       return {
-          messages: [],
+          //messages: [],
           socketId: ''
       }
   },
+  computed: {
+      messages(): {
+        return this.$store.state.messages
+      }
+    }
   components: {
   },
   sockets: {
       connect() {
         this.socketId = this.$socket.id
       },
-      serverMessage (arg) {
-          this.messages.push(arg)
+      socket_serverMessage (context, payload) {
+        context.commit('SEND_MESSAGE', payload)
       },
-      serverMessages (arg) {
-        this.messages = arg
-      }
+      socket_serverMessages (context, payload) {
+        context.commit('SEND_MESSAGES', payload)
+    },
+    SEND_MESSAGES(state, payload) {
+        state.messages = payload
+    }
   }
 }
 </script>
